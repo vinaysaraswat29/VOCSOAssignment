@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button type="button" onclick="myFunction()">Add Random Color</button>
+	<div id="color-div" style="display: none; height: 100px; width: 100px;">
+	</div>
+	<script type="text/javascript">
+
+		function getRandomColor() {
+  			var letters = '0123456789ABCDEF';
+  			var color = '#';
+			  for (var i = 0; i < 6; i++) {
+			    color += letters[Math.floor(Math.random() * 16)];
+			  }
+			  return color;
+}
+
+		function myFunction() {
+			var randomColor = getRandomColor();
+			document.getElementById('color-div').style.display = 'block';
+			document.getElementById('color-div').style.background = randomColor;
+			document.getElementById('color-div').innerHTML= randomColor;
+		}
+
+		document.getElementById('color-div').addEventListener('click', function (event) {
+            document.getElementById('color-div').style.display = 'none';
+        });
+	</script>
+</body>
+</html>
